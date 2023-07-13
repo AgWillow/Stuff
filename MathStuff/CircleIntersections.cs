@@ -33,14 +33,14 @@ public static class CircleIntersections
         double dsq = d * d;
         (double r1sq, double r2sq) = (r1 * r1, r2 * r2);
         double r1sq_r2sq = r1sq - r2sq;
-        double a = r1sq_r2sq / (2 * dsq);
-        double c = Sqrt(2 * (r1sq + r2sq) / dsq - (r1sq_r2sq * r1sq_r2sq) / (dsq * dsq) - 1);
+        double a = r1sq_r2sq / (2d * dsq);
+        double c = Sqrt(2d * (r1sq + r2sq) / dsq - (r1sq_r2sq * r1sq_r2sq) / (dsq * dsq) - 1d);
 
-        double fx = (x1 + x2) / 2 + a * (x2 - x1);
-        double gx = c * (y2 - y1) / 2;
+        double fx = (x1 + x2) / 2d + a * (x2 - x1);
+        double gx = c * (y2 - y1) / 2d;
 
-        double fy = (y1 + y2) / 2 + a * (y2 - y1);
-        double gy = c * (x1 - x2) / 2;
+        double fy = (y1 + y2) / 2d + a * (y2 - y1);
+        double gy = c * (x1 - x2) / 2d;
 
         var i1 = new Point(fx + gx, fy + gy);
         var i2 = new Point(fx - gx, fy - gy);
